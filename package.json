@@ -1,0 +1,32 @@
+{
+    "name": "contribution-terrain",
+    "version": "1.0.0",
+    "description": "Generate 3D terrain visualization from GitHub contribution data",
+    "main": "dist/main.js",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsx src/main.ts",
+        "sample": "tsx src/sample.ts",
+        "clean": "rm -rf dist"
+    },
+    "keywords": [
+        "github",
+        "contributions",
+        "visualization",
+        "3d",
+        "svg"
+    ],
+    "author": "Eshahhh",
+    "license": "MIT",
+    "type": "module",
+    "dependencies": {
+        "node-fetch": "^3.3.2",
+        "@types/node-fetch": "^2.6.7",
+        "dotenv": "^16.3.1"
+    },
+    "devDependencies": {
+        "@types/node": "^20.8.0",
+        "typescript": "^5.2.2",
+        "tsx": "^3.14.0"
+    }
+}
