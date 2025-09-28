@@ -1,4 +1,5 @@
-import { TerrainSvgGenerator } from './generateTerrainSvg.js';
+import { GraphSvgGenerator } from './graph.js';
+import { TerrainSvgGenerator } from './terrain.js';
 import { DayContribution } from './types.js';
 import { writeFileSync } from 'fs';
 
@@ -67,11 +68,15 @@ function main() {
   console.log(`   Most contributions in a day: ${maxContributions}`);
   console.log(`   Active days: ${activeDays}/${contributions.length}`);
 
+  // const generator = new GraphSvgGenerator();
   const generator = new TerrainSvgGenerator();
   const svg = generator.generateSvg(contributions, 'sample-user', -30.5, true);
 
+  // const outputPath = 'graph-sample.svg';
   const outputPath = 'terrain-sample.svg';
   writeFileSync(outputPath, svg, 'utf8');
+
+  console.log(`Saved SVG to ${outputPath}`);
 
 }
 
