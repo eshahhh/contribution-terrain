@@ -24871,7 +24871,7 @@ var init_multipart_parser = __esm({
 });
 
 // src/main.ts
-var core = __toESM(require_core(), 1);
+var core = __toESM(require_core());
 var import_fs = require("fs");
 
 // node_modules/node-fetch/src/index.js
@@ -27130,7 +27130,7 @@ var TerrainSvgGenerator = class {
 };
 
 // src/main.ts
-var path = __toESM(require("path"), 1);
+var path = __toESM(require("path"));
 async function main() {
   try {
     const userName = core.getInput("username") || process.argv[2];
