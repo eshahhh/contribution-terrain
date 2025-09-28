@@ -4,7 +4,7 @@
     "description": "Generate 3D terrain visualization from GitHub contribution data",
     "main": "dist/main.js",
     "scripts": {
-        "build": "tsc",
+        "build": "node build.js",
         "dev": "tsx src/main.ts",
         "sample": "tsx src/sample.ts",
         "clean": "rm -rf dist"
@@ -27,6 +27,7 @@
     },
     "devDependencies": {
         "@types/node": "^20.19.17",
+        "esbuild": "^0.25.10",
         "tsx": "^3.14.0",
         "typescript": "^5.2.2"
     }
