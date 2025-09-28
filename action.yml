@@ -12,6 +12,10 @@ inputs:
   github_token:
     description: 'GitHub token to authenticate API requests'
     required: true
+  output_dir:
+    description: 'The directory to save the output SVG file'
+    required: false
+    default: '.'
 runs:
   using: 'node16'
   main: 'dist/main.js'
