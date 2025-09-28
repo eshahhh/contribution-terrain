@@ -1,5 +1,6 @@
 name: 'Contribution Terrain'
 description: 'Generate 3D terrain or graph SVG visualization from GitHub contribution data'
+
 author: 'Eshahhh'
 inputs:
   username:
@@ -9,7 +10,7 @@ inputs:
     description: 'Style of visualization: terrain or graph'
     required: false
     default: 'graph'
-  github_token:
+  TOKEN_GITHUB:
     description: 'GitHub token to authenticate API requests'
     required: true
   output_dir:

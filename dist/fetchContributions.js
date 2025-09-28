@@ -19,7 +19,7 @@ const QUERY = `
 `;
 export async function retrieveContributionData(userName, token) {
     if (!token) {
-        throw new Error('Missing GitHub token. Set GITHUB_TOKEN in your environment (or .env) to use the GitHub API.');
+        throw new Error('Missing GitHub token. Set TOKEN_GITHUB in your environment (or .env) to use the GitHub API.');
     }
     const res = await fetch(ENDPOINT, {
         method: 'POST',

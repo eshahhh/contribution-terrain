@@ -4,11 +4,13 @@ import { retrieveContributionData } from './fetchContributions.js';
 import { parseContributionData } from './parseData.js';
 import { GraphSvgGenerator } from './graph.js';
 import { TerrainSvgGenerator } from './terrain.js';
+import * as path from 'path';
 async function main() {
     try {
         const userName = core.getInput('username') || process.argv[2];
         const style = core.getInput('style') || 'graph';
-        const githubToken = core.getInput('github_token') || process.env.GITHUB_TOKEN;
+        const githubToken = core.getInput('TOKEN_GITHUB') || process.env.TOKEN_GITHUB;
+        const outputDir = core.getInput('output_dir') || '.';
         const includeCredit = true;
         if (!userName) {
             core.setFailed('Username is required');
@@ -30,7 +32,8 @@ async function main() {
         const generator = isTerrain ? new TerrainSvgGenerator() : new GraphSvgGenerator();
         const svg = generator.generateSvg(contributions, userName, -30.5, includeCredit);
         const prefix = generator instanceof TerrainSvgGenerator ? 'terrain' : 'graph';
-        const outputPath = `${prefix}-${userName}.svg`;
+        const fileName = `${prefix}-${userName}.svg`;
+        const outputPath = path.join(outputDir, fileName);
         writeFileSync(outputPath, svg, 'utf8');
         const activeDays = contributions.filter(c => c.count > 0).length;
         const maxContributions = Math.max(...contributions.map(c => c.count));

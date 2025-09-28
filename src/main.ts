@@ -10,7 +10,7 @@ async function main() {
   try {
     const userName = core.getInput('username') || process.argv[2];
     const style = core.getInput('style') || 'graph';
-    const githubToken = core.getInput('github_token') || process.env.GITHUB_TOKEN;
+    const githubToken = core.getInput('TOKEN_GITHUB') || process.env.TOKEN_GITHUB;
     const outputDir = core.getInput('output_dir') || '.';
     const includeCredit = true;
 

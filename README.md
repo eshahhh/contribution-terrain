@@ -24,6 +24,6 @@ Available as github action. It can automatically generate a new image each day. 
     username: ${{ github.repository_owner }} # github user name to read the contribution graph from
     style: terrain # or graph
     output_dir: output_directory # optional, defaults to the root
-    github_token: ${{ secrets.GITHUB_TOKEN }}
+    TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
 ```
 
