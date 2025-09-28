@@ -21,8 +21,10 @@ const QUERY = `
   }
 `;
 
-export async function retrieveContributionData(userName: string): Promise<Github.ApiResponse> {
-  const token = process.env.GITHUB_TOKEN;
+export async function retrieveContributionData(
+  userName: string,
+  token: string
+): Promise<Github.ApiResponse> {
   if (!token) {
     throw new Error(
       'Missing GitHub token. Set GITHUB_TOKEN in your environment (or .env) to use the GitHub API.'
